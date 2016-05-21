@@ -1,2 +1,11 @@
-Este Laboratorio consiste en el despliegue de un servidor Idm (IPA) + OTP Token.
+:scrollbar:
+:data-uri:
+:toc2:
 
+== Red Hat Idm + token
+
+:numbered:
+
+== Overview
+
+Este Laboratorio consiste en el despliegue de un servidor Idm (IPA) + OTP Token, basado en una imagen qcow2 desplegada en openstack.
