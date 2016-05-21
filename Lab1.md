@@ -106,9 +106,22 @@ por lo que crearemos un archivo de configuración para la interfaz para eth1 bas
 	[  16.4] Running: cp /etc/sysconfig/network-scripts/ifcfg-eth{0,1} && sed -i s/DEVICE=.*/DEVICE=eth1/g /etc/sysconfig/network-scripts/ifcfg-eth1
 	[  16.7] Finishing off
 
-### 9.- Procederemos a crear nuestra vm con la imagen rhel7-guest-40G.qcow2 que acabamos de crear.
+### 9.- Procederemos a crear nuestra vm en KVM con la imagen rhel7-guest-40G.qcow2 que acabamos de crear.
 
-
-
-
+*Creación de vm
+![GitHub Logo](/img/)
+* Seleccionamos el Disco que creamos.
+![GitHub Logo](/img/)
+* Asignamos tipo y Versión de S.O.
+![GitHub Logo](/img/)
+* Asignamos memoria y CPU
+![GitHub Logo](/img/)
+* Personalizamos la configuración (Agregaremos la segunda interfaz de red)
+![GitHub Logo](/img/)
+* Asignamos la segunda interfaz de red que configuramos.
+![GitHub Logo](/img/)
+* Terminamos el proceso de creación, iniciamos la vm, realizamos loggin y validamos interfaces de red.
+![GitHub Logo](/img/)
+* Validamos consumo en virt-manager.
+![GitHub Logo](/img/)
 
