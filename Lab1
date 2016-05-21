@@ -49,7 +49,7 @@ pero no funciona sobre la imagen original, por lo que es necesario crear una nue
 	**********
 	[   3.3] Setting up initial partition table on rhel7-guest-40G.qcow2
 	[   3.4] Copying /dev/sda1
- 	100% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒⟧ 00:00
+ 	100% ⟦▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒⟧ 00:00
 	[  15.8] Expanding /dev/sda1 using the 'xfs_growfs' method
 
 	Resize operation completed with no errors.  Before deleting the old disk, 
@@ -95,3 +95,19 @@ además de que también se ralentiza considerablemente el proceso de arranque:
 	[  15.5] Setting a random seed
 	[  15.5] Setting passwords
 	[  16.9] Finishing off
+	
+8.- Tenemos que asegurarnos de que nuestra máquina Idm tiene una interfaz 2 interfaces de red por defecto,
+por lo que crearemos un archivo de configuración para la interfaz para eth1 basado en la eth0:
+
+	[root@localhost images]# virt-customize -a rhel7-guest-40G.qcow2 --run-command 'cp /etc/sysconfig/network-scripts/ifcfg-eth{0,1} && sed -i s/DEVICE=.*/DEVICE=eth1/g /etc/sysconfig/network-scripts/ifcfg-eth1'
+	[   0.0] Examining the guest ...
+	[  16.4] Setting a random seed
+	[  16.4] Running: cp /etc/sysconfig/network-scripts/ifcfg-eth{0,1} && sed -i s/DEVICE=.*/DEVICE=eth1/g /etc/sysconfig/network-scripts/ifcfg-eth1
+	[  16.7] Finishing off
+
+9.- Procederemos a crear nuestra vm con la imagen rhel7-guest-40G.qcow2 que acabamos de crear.
+
+file:///home/chakanais/Im%C3%A1genes/Captura%20de%20pantalla%20de%202016-05-18%2010-22-33.png
+
+
+
