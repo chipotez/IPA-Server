@@ -287,7 +287,7 @@ El procedimiento se basa en los siguiente pasos:
 	+ Editar usuario
 	+ Habilitar autenticacion de 2 factores
 
-_En este punto el usuario es capas de autenticar con su **Paswword** + **Token OTP**_
+_En este punto el usuario es capas de autenticar con su **Password** + **Token OTP**_
 
 ###_Escenario 2_
 El procedimiento se basa en los siguiente pasos:
@@ -330,17 +330,33 @@ El procedimiento se basa en los siguiente pasos:
 
 ![GitHub Logo](/img/Lab-2/Lab-2-k.png) 
 
-* El siguiente paso es habilitar
+* Agregamos el codigo QR.
 
+![GitHub Logo](/img/Lab-2/Lab-2-l.png) 
 
+* Abrimos la URL que nos muestra.
 
-![GitHub Logo](/img/Lab-2/Lab-2-g.png) 
-![GitHub Logo](/img/Lab-2/Lab-2-g.png) 
-![GitHub Logo](/img/Lab-2/Lab-2-g.png) 
-![GitHub Logo](/img/Lab-2/Lab-2-g.png) 
-![GitHub Logo](/img/Lab-2/Lab-2-g.png) 
-![GitHub Logo](/img/Lab-2/Lab-2-g.png) 
-![GitHub Logo](/img/Lab-2/Lab-2-g.png) 
+![GitHub Logo](/img/Lab-2/Lab-2-m.png) 
+
+* Seleccionamos nuestra app a utlizar (Goole Authenticator, Red Hat FreeOTP).
+
+![GitHub Logo](/img/Lab-2/Lab-2-n.png) 
+
+* Nuestro token ahora esta disponible para ser usado.
+
+![GitHub Logo](/img/Lab-2/Lab-2-o.png) 
+
+* Como admin editamos las propiedades del usuario.
+
+![GitHub Logo](/img/Lab-2/Lab-2-p.png) 
+
+* Como admin habilitamos la autenticación de 2 factores.
+
+![GitHub Logo](/img/Lab-2/Lab-2-q.png) 
+
+* Como usuario ahora ya podemos autenticarnos con nuestro Password + Token.
+
+![GitHub Logo](/img/Lab-2/Lab-2-r.png) 
 
 	
 	
