@@ -92,7 +92,7 @@ Validamos hostname:
 	
 ### Instalando y configurando Idm 
 
-	[root@localhost network-scripts]# yum install ipa-server bind bind-dyndb-ldap
+	[root@localhost network-scripts]# yum install ipa-server bind bind-dyndb-ldap ipa-server-dns
 	(...)
 	[root@localhost network-scripts]# echo "192.168.122.10 idm.poc.redhat.com idm" >>/etc/hosts
 	
@@ -121,7 +121,136 @@ Validamos hostname:
 	 Id    Nombre                         Estado
 	----------------------------------------------------
 	 18    IDM-Server                     ejecutando
+
+	* Configurando Idm.
 	
+	[root@idm ~]# ipa-server-install
+
+		The log file for this installation can be found in /var/log/ipaserver-install.log
+		==============================================================================
+		This program will set up the IPA Server.
+		
+		This includes:
+		  * Configure a stand-alone CA (dogtag) for certificate management
+		  * Configure the Network Time Daemon (ntpd)
+		  * Create and configure an instance of Directory Server
+		  * Create and configure a Kerberos Key Distribution Center (KDC)
+		  * Configure Apache (httpd)
+		
+		To accept the default shown in brackets, press the Enter key.
+				(...)
+		Do you want to configure integrated DNS (BIND)? [no]: yes
+		(...)
+		Server host name [idm.poc.redhat.com]: 
+		(...)
+		Please confirm the domain name [poc.redhat.com]: 
+		(...)
+		Directory Manager password: password!
+		Password (confirm): password!
+		(...)
+		IPA admin password: password!
+		Password (confirm): password!
+		Existing BIND configuration detected, overwrite? [no]: yes
+		Do you want to configure DNS forwarders? [yes]: 
+		Enter an IP address for a DNS forwarder, or press Enter to skip: 192.168.122.1
+		(...)
+		Do you want to configure the reverse zone? [yes]: 
+		Please specify the reverse zone name [122.168.192.in-addr.arpa.]: 
+		Using reverse zone(s) 122.168.192.in-addr.arpa.
+		
+		The IPA Master Server will be configured with:
+		Hostname:       idm.poc.redhat.com
+		IP address(es): 192.168.122.10
+		Domain name:    poc.redhat.com
+		Realm name:     POC.REDHAT.COM
+		
+		BIND DNS server will be configured to serve IPA domain with:
+		Forwarders:    192.168.122.1
+		Reverse zone(s):  122.168.192.in-addr.arpa.
+		
+		Continue to configure the system with these values? [no]: yes
+		(...)
+		(...)
+		(...)
+		==============================================================
+		Setup complete
+		
+		Next steps:
+			1. You must make sure these network ports are open:
+				TCP Ports:
+				  * 80, 443: HTTP/HTTPS
+				  * 389, 636: LDAP/LDAPS
+				  * 88, 464: kerberos
+				  * 53: bind
+				UDP Ports:
+				  * 88, 464: kerberos
+				  * 53: bind
+				  * 123: ntp
+		
+			2. You can now obtain a kerberos ticket using the command: 'kinit admin'
+			   This ticket will allow you to use the IPA tools (e.g., ipa user-add)
+			   and the web user interface.
+		
+		Be sure to back up the CA certificates stored in /root/cacert.p12
+		These files are required to create replicas. The password for these
+		files is the Directory Manager password
+	
+	* Agregamos los puertos al firewall 
+	
+	[root@idm ~]# yum install firewalld
+	(...)
+
+	Dependencias resueltas
+
+		======================================================================================================
+		 Package          Arquitectura          Versión          Repositorio          Tamaño
+		======================================================================================================
+		Instalando:
+		 firewalld           noarch             0.3.9-14.el7     rhel-7-server-aus-rpms    476 k
+		Instalando para las dependencias:
+		 ebtables            x86_64             2.0.10-13.el7    rhel-7-server-aus-rpms    122 k
+		 python-slip         noarch             0.4.0-2.el7      rhel-7-server-aus-rpms    30 k
+		 python-slip-dbus    noarch             0.4.0-2.el7      rhel-7-server-aus-rpms    31 k
+		Resumen de la transacción
+		=======================================================================================================
+		Instalar  1 Paquete (+3 Paquetes dependientes)
+		----------------------------------------------------------------------------------------------------
+		Total                                                                                                                                                                              192 kB/s | 660 kB  00:00:03     
+		Running transaction check
+		Running transaction test
+		Transaction test succeeded
+		Running transaction
+		(...)
+		¡Listo!
+		
+		* Iniciamos firewall
+
+		[root@idm ~]# systemctl start firewalld.service
+
+		* Habilitamos firewall
+
+		[root@idm ~]# systemctl enable firewalld.service
+
+		*Validamos status firewall.
+
+		[root@idm ~]# systemctl status firewalld.service
+			● firewalld.service - firewalld - dynamic firewall daemon
+			   Loaded: loaded (/usr/lib/systemd/system/firewalld.service; enabled; vendor preset: enabled)
+			   Active: active (running) since dom 2016-05-22 01:04:39 EDT; 8s ago
+			 Main PID: 5980 (firewalld)
+			   CGroup: /system.slice/firewalld.service
+			           └─5980 /usr/bin/python -Es /usr/sbin/firewalld --nofork --nopid
+			
+			may 22 01:04:36 idm.poc.redhat.com systemd[1]: Starting firewalld - dynamic firewall daemon...
+			may 22 01:04:39 idm.poc.redhat.com systemd[1]: Started firewalld - dynamic firewall daemon.
+			
+		* Agregamos puertos firewall		
+
+		[root@idm ~]# firewall-cmd --permanent --zone=public --add-port=80/tcp --add-port=443/tcp --add-port=389/tcp --add-port=636/tcp --add-port=88/tcp --add-port=464/tcp --add-port=88/udp --add-port=464/udp --add-port=123/udp
+		success
+		
+		*Reiniciamos firewall.
+		[root@idm ~]# systemctl restart firewalld.service
 
 
 
