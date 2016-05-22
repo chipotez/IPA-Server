@@ -1,4 +1,4 @@
-# Idm Server + OTP Token
+# Idm Server + OTP Token parte 1
 Este Laboratorio consiste en el despliegue de un servidor Idm (IPA) + OTP Token, basado en una imagen qcow2 desplegada en openstack.
 
 ### 1.- Lo primero que realizaremos es descargar la imagen a nuestro equipo.
