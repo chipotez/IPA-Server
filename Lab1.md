@@ -114,7 +114,7 @@ por lo que crearemos un archivo de configuración para la interfaz para eth1 bas
 
 * Seleccionamos el Disco que creamos.
 
-![GitHub Logo](/img/Lab-1/Lab-1-b.png)
+![GitHub Logo](/img/Lab-1/Lab-1-i.png)
 
 * Asignamos tipo y Versión de S.O.
 
