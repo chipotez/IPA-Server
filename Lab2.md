@@ -28,6 +28,11 @@ Lo primero que realizaremos será colocal ip estaticas en nuestro servidor.
 		IPADDR=10.10.0.100
 		USERCTL=no
 		TYPE=Ethernet
+		
+	[root@localhost network-scripts]# systemctl disable NetworkManager
+	[root@localhost network-scripts]# systemctl stop NetworkManager
+	[root@localhost network-scripts]# chkconfig network on
+	[root@localhost network-scripts]# service network start
 
 
 ### Asignaremos nombre al equipo
@@ -65,7 +70,7 @@ Validamos hostname:
 	
 	Actualizando:
 	
-	[root@idm ~]# yum update -y
+	[root@idm ~]# yum install deltarpm ; yum update -y
 	(...)
 	Resumen de la transacción
 	================================================================
@@ -84,6 +89,41 @@ Validamos hostname:
                Available Service Levels
 	+-------------------------------------------+
 	Premium-Support
+	
+### Instalando y configurando Idm 
+
+	[root@localhost network-scripts]# yum install ipa-server bind bind-dyndb-ldap
+	(...)
+	[root@localhost network-scripts]# echo "192.168.122.10 idm.poc.redhat.com idm" >>/etc/hosts
+	
+	Antes de continuar crearemos un snapshot de nuestra vm.
+	
+	* Creando:
+	
+	[root@localhost ~]# virsh snapshot-create-as IDM-Server IDM-Server-snap-Lab2
+	Ha sido creada la captura instantánea IDM-Server-snap-Lab2 del dominio
+
+	* Validando snapshot:
+	
+	[root@localhost ~]# virsh snapshot-list IDM-Server
+	 Nombre               Hora de creación         Estado
+	------------------------------------------------------------
+	 IDM-Server-snap-Lab2 2016-05-21 23:11:05 -0500 shutoff
+	
+	* Reiniciando vm:
+	
+	[root@localhost ~]# virsh start IDM-Server
+	Se ha iniciado el dominio IDM-Server
+
+	* Validando status vm:
+	
+	[root@localhost ~]# virsh list --all
+	 Id    Nombre                         Estado
+	----------------------------------------------------
+	 18    IDM-Server                     ejecutando
+	
+
+
 
 
 
