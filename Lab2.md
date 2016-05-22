@@ -362,20 +362,35 @@ El procedimiento se basa en los siguiente pasos:
 # Escenario II
 
 * Ahora dentro de la pestaña Users crearemos al usuario Red Hat y seleccionamos la opción Editar
+
 ![GitHub Logo](/img/Lab-2/Lab-2-s.png) 
+
 * Como admin habilitamos la autenticación de 2 factores y guardamos cambios.
+
 ![GitHub Logo](/img/Lab-2/Lab-2-t.png) 
+
 * Ahora haremos login como Red Hat
+
 ![GitHub Logo](/img/Lab-2/Lab-2-u.png) 
+
 * Cambiamos el password por default por uno personalizado.
+
 ![GitHub Logo](/img/Lab-2/Lab-2-v.png) 
+
 * Posteriormente en la pestaña Actions, seleccionaremos Add OTP Token.
+
 ![GitHub Logo](/img/Lab-2/Lab-2-w.png) 
+
 * Seleccionaremos Time-based (HOTP).
+
 ![GitHub Logo](/img/Lab-2/Lab-2-x.png)
+
 * Aparecera el codigo QR.
+
 ![GitHub Logo](/img/Lab-2/Lab-2-y.png)
+
 * Desde Red Hat FreeOTP leeremos el QR.
+
 ![GitHub Logo](/img/Lab-2/Lab-2-z.png) 
 
 
