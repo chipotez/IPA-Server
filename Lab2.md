@@ -393,6 +393,14 @@ El procedimiento se basa en los siguiente pasos:
 
 ![GitHub Logo](/img/Lab-2/Lab-2-z.png) 
 
+* Ahora ya tenemos nuestro token asignado a la cuenta Red Hat.
+
+![GitHub Logo](/img/Lab-2/Lab-2-aa.png)
+
+* Realizamos Login con el usuarios Red Hat / password+token.
+
+![GitHub Logo](/img/Lab-2/Lab-2-ab.png) 
+
 
 	
 
