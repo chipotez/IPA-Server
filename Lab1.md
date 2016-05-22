@@ -108,19 +108,32 @@ por lo que crearemos un archivo de configuración para la interfaz para eth1 bas
 
 ### 9.- Procederemos a crear nuestra vm en KVM con la imagen rhel7-guest-40G.qcow2 que acabamos de crear.
 
-*Creación de vm
+* Creación de vm.
+
 ![GitHub Logo](/img/Lab-1/Lab-1-a.png)
+
 * Seleccionamos el Disco que creamos.
+
 ![GitHub Logo](/img/Lab-1/Lab-1-b.png)
+
 * Asignamos tipo y Versión de S.O.
+
 ![GitHub Logo](/img/Lab-1/Lab-1-c.png)
+
 * Asignamos memoria y CPU
+
 ![GitHub Logo](/img/Lab-1/Lab-1-d.png)
+
 * Personalizamos la configuración (Agregaremos la segunda interfaz de red)
+
 ![GitHub Logo](/img/Lab-1/Lab-1-e.png)
+
 * Asignamos la segunda interfaz de red que configuramos.
+
 ![GitHub Logo](/img/Lab-1/Lab-1-f.png)
+
 * Terminamos el proceso de creación, iniciamos la vm, realizamos loggin y validamos interfaces de red.
+
 ![GitHub Logo](/img/Lab-1/Lab-1-g.png)
 
 
