@@ -251,6 +251,8 @@ Validamos hostname:
 		
 		*Reiniciamos firewall.
 		[root@idm ~]# systemctl restart firewalld.service
+		
+		a
 
 
 
