@@ -252,7 +252,61 @@ Validamos hostname:
 		*Reiniciamos firewall.
 		[root@idm ~]# systemctl restart firewalld.service
 		
-		a
+## Acedemos desde el navegador a nuestro Idm
+
+* En este primer punto ingresaremos con nuestro usuario y password que configuramos durante el proceso de instalación.
+	
+![GitHub Logo](/img/Lab-2/Lab-2-a.png) 
+
+* Observando en la configuración post-instalación podemos observar que solo se encuentra el usuario admin, como administrador default.
+
+![GitHub Logo](/img/Lab-2/Lab-2-b.png)
+
+* Podemos ver las zonas de DNS que se generarón.
+
+![GitHub Logo](/img/Lab-2/Lab-2-c.png)
+
+* Y los registros que se ingresarón default.
+	
+![GitHub Logo](/img/Lab-2/Lab-2-d.png) 
+	
+* Ahora dentro de la pestaña Users crearemos al usuario Demo
+	
+![GitHub Logo](/img/Lab-2/Lab-2-e.png) 
+
+* Como siguiente paso realizaremos logout.
+
+![GitHub Logo](/img/Lab-2/Lab-2-f.png) 
+
+* Para continuar con la configuración, haremos login como usuario Demo
+
+![GitHub Logo](/img/Lab-2/Lab-2-g.png) 
+
+* El Idm por default nos pedirá que cambiemos el password default por uno nuevo.
+
+![GitHub Logo](/img/Lab-2/Lab-2-h.png)
+
+* Posteriormente en la pestaña Actions, seleccionaremos Add OTP Token.
+
+![GitHub Logo](/img/Lab-2/Lab-2-i.png)
+
+* Seleccionaremos Time-based (TOTP).
+
+![GitHub Logo](/img/Lab-2/Lab-2-k.png) 
+
+
+
+
+![GitHub Logo](/img/Lab-2/Lab-2-g.png) 
+![GitHub Logo](/img/Lab-2/Lab-2-g.png) 
+![GitHub Logo](/img/Lab-2/Lab-2-g.png) 
+![GitHub Logo](/img/Lab-2/Lab-2-g.png) 
+![GitHub Logo](/img/Lab-2/Lab-2-g.png) 
+![GitHub Logo](/img/Lab-2/Lab-2-g.png) 
+![GitHub Logo](/img/Lab-2/Lab-2-g.png) 
+
+	
+	
 
 
 
