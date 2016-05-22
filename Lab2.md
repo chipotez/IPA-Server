@@ -2,7 +2,7 @@
 ## Deploy Idm.
 
 ### Configurando Red.
-Lo primero que realizaremos será colocal ip estaticas en nuestro servidor.
+Lo primero que realizaremos será colocar ip's estáticas en nuestro servidor.
 
 	[root@localhost network-scripts]# cat ifcfg-eth0 
 		DEVICE=eth0 
@@ -252,13 +252,13 @@ Validamos hostname:
 		*Reiniciamos firewall.
 		[root@idm ~]# systemctl restart firewalld.service
 		
-## Acedemos desde el navegador a nuestro Idm
+## Acedemos desde el navegador a nuestro Idm.
 
-* En este primer punto ingresaremos con nuestro usuario y password que configuramos durante el proceso de instalación.
+* Ingresaremos con nuestro usuario y password que configuramos durante el proceso de instalación.
 	
 ![GitHub Logo](/img/Lab-2/Lab-2-a.png) 
 
-* Observando en la configuración post-instalación podemos observar que solo se encuentra el usuario admin, como administrador default.
+* En la configuración post-instalación podemos observar que solo se encuentra el usuario admin.
 
 ![GitHub Logo](/img/Lab-2/Lab-2-b.png)
 
@@ -269,6 +269,42 @@ Validamos hostname:
 * Y los registros que se ingresarón default.
 	
 ![GitHub Logo](/img/Lab-2/Lab-2-d.png) 
+
+##**En este laboratorio realizaremos la asignación de token mediante 2 procedimientos**
+###_Escenario 1_
+El procedimiento se basa en los siguiente pasos:
+
+1. Como admin
+	+ Crear usuario
+	+ logout admin
+2. Como usuario.
+	+ First login
+	+ Cambiar password default
+	+ Agregar OTP Token (TOTP) (HOTP)
+	+ Configurar OTP QR
+	+ Logout usuario
+3. Como admin.
+	+ Editar usuario
+	+ Habilitar autenticacion de 2 factores
+
+_En este punto el usuario es capas de autenticar con su **Paswword** + **Token OTP**_
+
+###_Escenario 2_
+El procedimiento se basa en los siguiente pasos:
+
+1. Como admin
+	+ Crear usuario
+	+ Editar usuario
+	+ Habilitar autenticacion de 2 factores
+	+ logout admin
+2. Como usuario.
+	+ First login
+	+ Cambiar password default
+	+ Agregar OTP Token (TOTP) (HOTP)
+	+ Configurar OTP QR
+	+ Logout user
+
+
 	
 * Ahora dentro de la pestaña Users crearemos al usuario Demo
 	
@@ -294,6 +330,7 @@ Validamos hostname:
 
 ![GitHub Logo](/img/Lab-2/Lab-2-k.png) 
 
+* El siguiente paso es habilitar
 
 
 
