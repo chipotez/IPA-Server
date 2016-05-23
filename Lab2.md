@@ -90,6 +90,12 @@ Validamos hostname:
 	+-------------------------------------------+
 	Premium-Support
 	
+	   subscription-manager repos --disable=*
+	   subscription-manager repos --enable=rhel-7-server-rpms
+	   subscription-manager repos --enable=rhel-7-server-optional-rpms
+	   subscription-manager repos --enable=rhel-7-server-supplementary-rpms
+
+	
 ### Instalando y configurando Idm 
 
 	[root@localhost network-scripts]# yum install ipa-server bind bind-dyndb-ldap ipa-server-dns
