@@ -39,7 +39,8 @@ Lo primero que realizaremos será colocar ip's estáticas en nuestro servidor.
 Hostname:
 
 	[root@localhost network-scripts]# hostnamectl set-hostname idm.poc.redhat.com
-	[root@localhost network-scripts]# hostnamectl set-hostname "Mike's lab for demos" --pretty 
+	[root@localhost network-scripts]# hostnamectl set-hostname "Mike's lab for demos" --pretty
+	[root@localhost network-scripts]# hostnamectl set-hostname --transient ipa.pisa.com
 
 Validamos hostname:
 
