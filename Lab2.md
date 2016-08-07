@@ -131,6 +131,7 @@ Actualizando:
 	 18    IDM-Server                     ejecutando
 
 	* Configurando Idm.
+
 	
 	[root@idm ~]# ipa-server-install
 
@@ -408,6 +409,9 @@ El procedimiento se basa en los siguiente pasos:
 * Realizamos Login con el usuarios Red Hat / password+token.
 
 ![GitHub Logo](/img/Lab-2/Lab-2-ab.png) 
+
+En caso de esxistir problemas con la entropia leer:
+https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Virtualization_Deployment_and_Administration_Guide/sect-Guest_virtual_machine_device_configuration-Random_number_generator_device.html
 
 
 	
