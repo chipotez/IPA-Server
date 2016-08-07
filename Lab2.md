@@ -63,13 +63,28 @@ Validamos hostname:
 
 ### Registramos S.O. y Actualizamos S.O. desde repositorios oficiales.
 
-	Registrando:
+Registrando:
 	
 	[root@idm ~]#   subscription-manager register --username rhn-user --password password --auto-attach
 	Registering to: subscription.rhn.redhat.com:443/subscription
 	The system has been registered with ID: 05bb900a-5b64-4497-9895-b80ead952014
 	
-	Actualizando:
+Validando nuestro tipo de soporte:
+	
+	[root@idm ~]# subscription-manager service-level --list
+	+-------------------------------------------+
+	Available Service Levels
+	+-------------------------------------------+
+	Premium-Support
+	
+Asignando Canales necesarios:
+	
+	subscription-manager repos --disable=*
+   	subscription-manager repos --enable=rhel-7-server-rpms
+   	subscription-manager repos --enable=rhel-7-server-optional-rpms
+   	subscription-manager repos --enable=rhel-7-server-supplementary-rpms
+
+Actualizando:
 	
 	[root@idm ~]# yum install deltarpm ; yum update -y
 	(...)
@@ -82,20 +97,6 @@ Validamos hostname:
 	Downloading packages:
 		(...)
 	¡Listo!
-	
-	Validando nuestro tipo de soporte:
-	
-	[root@idm ~]# subscription-manager service-level --list
-	+-------------------------------------------+
-               Available Service Levels
-	+-------------------------------------------+
-	Premium-Support
-	
-	   subscription-manager repos --disable=*
-	   subscription-manager repos --enable=rhel-7-server-rpms
-	   subscription-manager repos --enable=rhel-7-server-optional-rpms
-	   subscription-manager repos --enable=rhel-7-server-supplementary-rpms
-
 	
 ### Instalando y configurando Idm 
 
