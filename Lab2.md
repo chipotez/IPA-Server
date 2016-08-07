@@ -258,6 +258,10 @@ Actualizando:
 		[root@idm ~]# firewall-cmd --permanent --zone=public --add-port=80/tcp --add-port=443/tcp --add-port=389/tcp --add-port=636/tcp --add-port=88/tcp --add-port=464/tcp --add-port=88/udp --add-port=464/udp --add-port=123/udp
 		success
 		
+	Otra alternativa es:
+	
+		[root@idm ~]# firewall-cmd --permanent --add-service={ntp,http,https,ldap,ldaps,kerberos,kpasswd,dns}
+		
 		*Reiniciamos firewall.
 		[root@idm ~]# systemctl restart firewalld.service
 		
