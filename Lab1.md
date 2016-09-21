@@ -1,7 +1,7 @@
 # Workshop UTRNG Chilapa
 
-Preparado por: Miguel Angel Pineda.
-Datos de Contacto: mapm.pineda@gmail.com.
+	* Preparado por: Miguel Angel Pineda.
+	* Datos de Contacto: mapm.pineda@gmail.com.
 
 # Idm Server + OTP Token parte 1
 
