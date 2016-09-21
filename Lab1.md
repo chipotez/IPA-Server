@@ -1,5 +1,11 @@
+# Workshop UTRNG Chilapa
+
+Preparado por: Miguel Angel Pineda.
+Datos de Contacto: mapm.pineda@gmail.com.
+
 # Idm Server + OTP Token parte 1
-Este Laboratorio consiste en el despliegue de un servidor Idm (IPA) + OTP Token, basado en una imagen qcow2 desplegada en openstack.
+
+Este Laboratorio consiste en el despliegue de un servidor Idm (IPA) + OTP Token, basado en una imagen qcow2 desplegada en Fedora 24 x86_64 virtualizado con KVM.
 
 ### 1.- Lo primero que realizaremos es descargar la imagen a nuestro equipo.
 
