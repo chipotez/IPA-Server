@@ -29,21 +29,21 @@
 
 * Instalamos FreeRadius.
 
-      [root@radius ~]# yum install freeradius freeradius-ldap freeradius-utils wpa_supplicant
-      (...)
-      (...)
-      Dependencias resueltas
-      
-      ================================================================================
-       Package          Arquitectura     Versión      Repositorio              Tamaño
-      ================================================================================
-      Instalando:
-       freeradius         x86_64         3.0.4-6.el7  rhel-7-server-aus-rpms         985 k
-       freeradius-ldap    x86_64         3.0.4-6.el7  rhel-7-server-optional-rpms    95 k
-       freeradius-utils   x86_64         3.0.4-6.el7  rhel-7-server-optional-rpms   188 k
-      Instalando para las dependencias:
-      (...)
-      (...)
+                          [root@radius ~]# yum install freeradius freeradius-ldap freeradius-utils wpa_supplicant
+                          (...)
+                          (...)
+                          Dependencias resueltas
+                          
+                          ================================================================================
+                           Package          Arquitectura     Versión      Repositorio              Tamaño
+                          ================================================================================
+                          Instalando:
+                           freeradius         x86_64         3.0.4-6.el7  rhel-7-server-aus-rpms         985 k
+                           freeradius-ldap    x86_64         3.0.4-6.el7  rhel-7-server-optional-rpms    95 k
+                           freeradius-utils   x86_64         3.0.4-6.el7  rhel-7-server-optional-rpms   188 k
+                          Instalando para las dependencias:
+                          (...)
+                          (...)
 
   
           [root@radius raddb]# cd /etc/raddb/
